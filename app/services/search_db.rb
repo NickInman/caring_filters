@@ -2,7 +2,7 @@ class SearchDb < ApplicationRecord
 
   def self.search(zip, reviews, rating)
     results = []
-    url = "assets/data.json"
+    url = "#{Rails.root}/app/assets/javascripts/data.json"
     @data = File.read(url)
     parsed = JSON.parse(@data)
     parsed["data"]["localSearch"]["localResources"]["nodes"].each do |result|
