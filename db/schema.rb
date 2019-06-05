@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_06_05_200725) do
+ActiveRecord::Schema.define(version: 2019_06_05_211857) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -22,6 +22,23 @@ ActiveRecord::Schema.define(version: 2019_06_05_200725) do
     t.integer "cost"
     t.boolean "enhanced"
     t.boolean "carehome"
+  end
+
+  create_table "results", force: :cascade do |t|
+    t.integer "resultId"
+    t.string "name", default: "NA"
+    t.string "address", default: "NA"
+    t.integer "postalCode", default: 0
+    t.boolean "enhanced", default: false
+    t.boolean "careHome", default: false
+    t.string "description", default: "NA"
+    t.integer "averageCost", default: 0
+    t.integer "averageRating", default: 0
+    t.integer "foodRating", default: 0
+    t.integer "reviews", default: 0
+    t.string "url", default: "NA"
+    t.string "websiteUrl", default: "NA"
+    t.integer "phone", default: 0
   end
 
 end
