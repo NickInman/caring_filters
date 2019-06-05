@@ -1,3 +1,5 @@
 Rails.application.routes.draw do
-  root 'home#index' #Home
+  root 'filters#index' #Home
+  get 'filters/index'
+  post 'filters/index'
 end

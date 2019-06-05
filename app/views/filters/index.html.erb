@@ -1,0 +1,10 @@
+<h1>Filters#index</h1>
+<%= form_tag(filters_index_path method: :get) do %>
+  Zip <%= text_field_tag :zip %>
+  Reviews <%= text_field_tag :reviews %>
+  Rating <%= text_field_tag :rating %>
+  Cost <%= text_field_tag :cost %>
+  Enhanced <%= check_box_tag :enhanced %>
+  Carehome <%= check_box_tag :carehome %>
+  <%= submit_tag 'Search' %>
+<% end %>
