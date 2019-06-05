@@ -8,3 +8,9 @@
   Carehome <%= check_box_tag :carehome %>
   <%= submit_tag 'Search' %>
 <% end %>
+<% if !@results.nil? && @results.kind_of?(Array) %>
+  <%= @results.each do |res|%>
+    <p><%= res['name'] %> </p>
+    <p><%= res['selfDescription'] %> </p>
+    <% end %>
+<% end %>

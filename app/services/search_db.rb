@@ -1,12 +1,12 @@
 class SearchDb < ApplicationRecord
 
-  def self.search(zip)
+  def self.search(zip, reviews, rating)
     results = []
     url = "#{Rails.root}/app/assets/data.json"
     @data = File.read(url)
     parsed = JSON.parse(@data)
     parsed["data"]["localSearch"]["localResources"]["nodes"].each do |result|
-      if result["postalCode"] === zip
+      if result["postalCode"] === zip && result["reviewCount"].to_i >= reviews.to_i && result["averageRating"].to_i >= rating.to_i
         results << result
       end
     end

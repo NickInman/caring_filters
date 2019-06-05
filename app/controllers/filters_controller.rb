@@ -1,10 +1,12 @@
 class FiltersController < ApplicationController
+
   def index
     if params[:zip]
-      @results = SearchDb.search(params[:zip])
+      @results = SearchDb.search(params[:zip], params[:reviews], params[:rating])
     else
-      flash.notice = 'Error'
+      flash.notice = 'Nothing yet'
     end
+    render :index
   end
 
   private
