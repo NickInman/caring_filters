@@ -1,6 +1,6 @@
 <h1>Filters#index</h1>
 <p>Zip required, leave blank to ignore </p>
-<%= form_tag(filters_index_path method: :get) do %>
+<%= form_tag(filters_index_path) do %>
   Zip <%= text_field_tag :zip  %>
   Reviews <%= text_field_tag :reviews %>
   Rating <%= text_field_tag :rating %>
